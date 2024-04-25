@@ -89,3 +89,4 @@ dark-theme: 439.vdef09f81f85e
 docker-commons:latest
 docker-workflow:latest
 ws-cleanup:latest
+sonar:latest
