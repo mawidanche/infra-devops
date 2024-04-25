@@ -29,7 +29,6 @@ services:
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-    command: chown root:docker /var/run/docker.sock
   nexus:
     image: sonatype/nexus3
     restart: always

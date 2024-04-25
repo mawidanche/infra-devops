@@ -18,4 +18,3 @@ RUN apt -y install docker-ce
 RUN apt-get clean
 RUN gpasswd -a jenkins docker 
 RUN usermod -aG docker jenkins
-USER jenkins
