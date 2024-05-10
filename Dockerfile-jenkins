@@ -14,7 +14,7 @@ RUN apt install -y apt-transport-https ca-certificates curl software-properties-
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 RUN apt-cache policy docker-ce
-RUN apt -y install docker-ce
+RUN apt -y install docker-ce docker-compose
 RUN apt-get clean
 RUN gpasswd -a jenkins docker 
 RUN usermod -aG docker jenkins
