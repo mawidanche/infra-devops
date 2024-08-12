@@ -3,12 +3,12 @@ cloudbees-folder: 6.901.vb_4c7a_da_75da_3
 antisamy-markup-formatter: 162.v0e6ec0fcfcf6
 asm-api: 9.7-33.v4d23ef79fcc8
 json-path-api: 2.9.0-58.v62e3e85b_a_655
-structs: 337.v1b_04ea_4df7c8
+structs: latest
 workflow-step-api: 657.v03b_e8115821b_
 token-macro: 400.v35420b_922dcb_
 build-timeout: 1.32
-credentials: 1337.v60b_d7b_c7b_c9f
-plain-credentials: 179.vc5cb_98f6db_38
+credentials: latest
+plain-credentials: latest
 variant: 60.v7290fc0eb_b_cd
 ssh-credentials: 337.v395d2403ccd4
 credentials-binding: 657.v2b_19db_7d6e6d
@@ -17,7 +17,7 @@ workflow-api: 1291.v51fd2a_625da_7
 commons-lang3-api: 3.13.0-62.v7d18e55f51e2
 timestamper: 1.26
 caffeine-api: 3.1.8-133.v17b_1ff2e0599
-script-security: 1335.vf07d9ce377a_e
+script-security: latest
 javax-activation-api: 1.2.0-6
 jaxb: 2.3.9-1
 snakeyaml-api: 2.2-111.vc6598e30cc65
@@ -40,7 +40,7 @@ ant: 497.v94e7d9fffa_b_9
 javax-mail-api: 1.6.2-9
 durable-task: 555.v6802fe0f0b_82
 workflow-durable-task-step: 1336.v768003e07199
-bouncycastle-api: 2.30.1.77-225.v26ea_c9455fd9
+bouncycastle-api: latest
 instance-identity: 185.v303dc7c645f9
 workflow-scm-step: 427.v4ca_6512e7df1
 workflow-cps: 3894.vd0f0248b_a_fc4

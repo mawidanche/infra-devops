@@ -30,6 +30,7 @@ services:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
   nexus:
+    profiles: ['not-start']
     image: sonatype/nexus3
     restart: always
     volumes:
@@ -38,6 +39,7 @@ services:
       - "8081:8081"
       - "8082:8082"
   sonarqube:
+    profiles: ['not-start']
     image: sonarqube:community
     depends_on:
       - db_sonar
@@ -52,6 +54,7 @@ services:
     ports:
       - "8083:9000"
   db_sonar:
+    profiles: ['not-start']
     image: postgres:12
     environment:
       POSTGRES_USER: sonar
