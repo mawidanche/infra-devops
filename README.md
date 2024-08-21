@@ -9,3 +9,7 @@ Revisar plugins instalados, en la consola de script de jenkins:
         println ("${plugin.getDisplayName()} (${plugin.getShortName()}): ${plugin.getVersion()
     }")
 }
+
+## Sonarqube
+Contraseña por defecto tras primera instalacion
+admin/admin
