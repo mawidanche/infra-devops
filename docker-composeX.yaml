@@ -1,4 +1,4 @@
-name: devops-infra
+name: devops-infra-lab5
 services:
   gitlab:
     profiles: ['not-start']
@@ -30,6 +30,8 @@ services:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /kubeconfig/config:/root/.kube/config
+    environment:
+      - KUBECONFIG=/root/.kube/config
   nexus:
     image: sonatype/nexus3
     restart: always
@@ -47,10 +49,12 @@ services:
       SONAR_JDBC_URL: jdbc:postgresql://db_sonar:5432/sonar
       SONAR_JDBC_USERNAME: sonar
       SONAR_JDBC_PASSWORD: sonar
+      SONAR_SEARCH_JAVAOPTS: "-Xms2g -Xmx2g"
     volumes:
       - sonarqube_data:/opt/sonarqube/data
       - sonarqube_extensions:/opt/sonarqube/extensions
       - sonarqube_logs:/opt/sonarqube/logs
+      - sonarqube_es:/opt/sonarqube/temp/es
     ports:
       - "8084:9000"
   db_sonar:
@@ -61,6 +65,16 @@ services:
     volumes:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
+  kind-cluster:
+    image: kindest/node:v1.24.0
+    container_name: kind-cluster
+    privileged: true
+    command: ["kind", "create", "cluster", "--name", "jenkins-cluster"]
+    environment:
+      - KUBECONFIG=/root/.kube/config
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - kubeconfig:/root/.kube
 volumes:
   gitlab-config:
   gitlab-logs:
@@ -70,5 +84,7 @@ volumes:
   sonarqube_data:
   sonarqube_extensions:
   sonarqube_logs:
+  sonarqube_es:
   postgresql:
   postgresql_data:
+  kubeconfig:
